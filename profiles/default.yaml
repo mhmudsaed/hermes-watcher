@@ -1,0 +1,60 @@
+# Default scoring profile: remote-first AI/automation junior.
+# Keywords are matched case-insensitively on word boundaries.
+
+include:
+  # core craft — highest weights
+  python: 3
+  ai agent: 3
+  automation: 3
+  llm: 2.5
+  rag: 2.5
+  chatbot: 2
+  machine learning: 2
+  prompt engineering: 2
+  # adjacent tooling
+  fastapi: 2
+  n8n: 2
+  langchain: 2
+  browser automation: 2
+  webscraping: 1
+  web scraping: 1
+  data pipeline: 1.5
+  etl: 1
+  postgresql: 1
+  docker: 1
+  typescript: 1
+  react: 1
+  # role signals
+  ai engineer: 3
+  automation engineer: 3
+  junior: 1.5
+  entry level: 1.5
+  entry-level: 1.5
+  intern: 1
+  remote: 1
+
+# Hard veto when matched in title+company (senior-only / unrelated tracks).
+exclude:
+  - senior
+  - staff
+  - principal
+  - director
+  - vp
+  - c-suite
+  - dentist
+  - nurse
+  - driver
+  - bauingenieur
+
+# Veto when matched anywhere in the posting text.
+exclude_description:
+  - security clearance
+  - us citizen only
+  - dutch required
+
+title_boost: 2.0
+remote_bonus: 1.0
+jordan_bonus: 1.5
+
+# Digest cutoff: only listings scoring >= threshold are reported.
+threshold: 3.0
