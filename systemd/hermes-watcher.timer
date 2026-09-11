@@ -1,0 +1,12 @@
+[Unit]
+Description=Run hermes-watcher digest every morning
+
+[Timer]
+# 08:00 Asia/Amman daily. Timers run in system timezone; set TimeZone explicitly.
+OnCalendar=08:00 Asia/Amman
+Persistent=true
+RandomizedDelaySec=300
+Unit=hermes-watcher.service
+
+[Install]
+WantedBy=timers.target

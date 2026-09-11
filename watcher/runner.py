@@ -89,7 +89,8 @@ def run_once(
             result.fetched[name] = len(listings)
             store.set_feed_hash(name, digest_hash)
 
-            fresh = [l for l in listings if l.url and l.url not in store.seen_urls([l.url for l in listings])]
+            known = store.seen_urls([l.url for l in listings if l.url])
+            fresh = [l for l in listings if l.url and l.url not in known]
             rows = []
             for listing in fresh:
                 score, why = score_listing(listing, profile)

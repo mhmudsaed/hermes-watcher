@@ -23,6 +23,16 @@ def _escape(text: str) -> str:
     return text
 
 
+def _link(url: str) -> str:
+    """Inline link with the visible URL as text: clickable and readable.
+
+    Display text is fully escaped; the target escapes only backslash and
+    closing paren (per Bot API MarkdownV2 rules), so links stay intact.
+    """
+    target = url.replace("\\", "\\\\").replace(")", "\\)")
+    return f"[{_escape(url)}]({target})"
+
+
 def render_digest(
     items: list[ScoredListing],
     max_items: int = 15,
@@ -49,7 +59,7 @@ def render_digest(
             flag = "\U0001f30d remote" if item.remote else _escape(item.location or "onsite")
             lines.append(
                 f"• *{_escape(item.title)}* — {_escape(item.company)} ({flag}) "
-                f"— score {item.score:g}\n  {_escape(item.url)}"
+                f"— score {item.score:g}\n  {_link(item.url)}"
             )
     if len(items) > max_items:
         lines.append(f"\n_+{len(items) - max_items} more in the database (max_items={max_items})_")

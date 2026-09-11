@@ -1,0 +1,12 @@
+[Unit]
+Description=hermes-watcher daily job digest
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# EDIT: point these at your checkout and venv
+WorkingDirectory=%h/Codes/hermes-watcher
+EnvironmentFile=%h/Codes/hermes-watcher/.env
+ExecStart=%h/Codes/hermes-watcher/.venv/bin/python -m watcher.cli run --once
+# Keep logs visible via: journalctl --user -u hermes-watcher.service
