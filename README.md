@@ -96,7 +96,7 @@ systemctl --user list-timers | grep hermes-watcher
 Cron alternative (08:00 daily):
 
 ```cron
-0 8 * * * cd /home/mahmoud/Codes/hermes-watcher && ./.venv/bin/python -m watcher.cli run --once >> data/watcher.log 2>&1
+0 8 * * * cd ~/Codes/hermes-watcher && ./.venv/bin/python -m watcher.cli run --once >> data/watcher.log 2>&1
 ```
 
 ## Live-mode setup
