@@ -15,6 +15,10 @@ Backs the case study: mahmoudsaeed.com/work/watcher-telegram-digest
 
 ![Demo — a real offline run](docs/assets/demo.gif)
 
+
+▶️ The fetch → score → digest cycle — full-quality recording (plays inline):
+
+https://github.com/user-attachments/assets/34340ddc-c1d9-4a42-b65f-d9a54f32bfdc
 One command runs a full fetch → score → digest cycle offline with zero credentials: `./scripts/demo.sh`. The suite is also one command — `pytest -q` → **27 passed**. The GIF above is a real recording (sped up; it opens with a title card); the [full-quality MP4](docs/assets/demo.mp4) is in this repo.
 
 ## Architecture
