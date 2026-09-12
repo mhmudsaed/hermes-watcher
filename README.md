@@ -15,7 +15,7 @@ Backs the case study: mahmoudsaeed.com/work/watcher-telegram-digest
 
 ![Demo — a real offline run](docs/assets/demo.gif)
 
-One command runs a full fetch → score → digest cycle offline with zero credentials: `./scripts/demo.sh`. The suite is also one command — `pytest -q` → **27 passed**. The GIF above is an unedited recording (sped up); the [full-quality MP4](docs/assets/demo.mp4) is in this repo.
+One command runs a full fetch → score → digest cycle offline with zero credentials: `./scripts/demo.sh`. The suite is also one command — `pytest -q` → **27 passed**. The GIF above is a real recording (sped up; it opens with a title card); the [full-quality MP4](docs/assets/demo.mp4) is in this repo.
 
 ## Architecture
 
